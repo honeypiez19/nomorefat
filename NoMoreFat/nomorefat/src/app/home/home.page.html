@@ -1,0 +1,37 @@
+<style>
+  .Login {
+    position: relative;
+    top: 350px;
+    left: 0px;
+    text-align: center;
+  }
+
+  .Email {
+    position: relative;
+    top: 360px;
+    left: 0px;
+    text-align: center;
+  }
+</style>
+
+<ion-content>
+  <div class="ion-padding">
+    <div class="Login">
+
+      <ion-button [routerLink]="'/login'">
+        เข้าสู่ระบบ
+      </ion-button>
+
+      <br>
+      <ion-label>-------------------- Register --------------------</ion-label>
+
+    </div>
+
+    <div class="Email">
+      <ion-button color="danger" [routerLink]="'/register'">
+        อีเมล
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

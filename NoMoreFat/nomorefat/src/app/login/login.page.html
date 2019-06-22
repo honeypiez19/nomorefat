@@ -1,0 +1,74 @@
+<style>
+  .iconBack {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    bottom: 0;
+    width: 50%;
+  }
+
+  .labelEmail {
+    font-size: 18px;
+    position: fixed;
+    top: 150px;
+    left: 80px;
+    bottom: 0;
+    width: 50%;
+  }
+
+  .Login {
+    position: fixed;
+    top: 400px;
+    left: 75px;
+    bottom: 0;
+    width: 60%;
+    text-align: center;
+  }
+
+</style>
+
+<ion-header>
+  <ion-toolbar>
+
+    <div class="iconBack">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </div>
+
+    <ion-title style="text-align: center;">เข้าสู่ระบบ</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="labelEmail">
+    <ion-label >อีเมล</ion-label>
+    <ion-item>
+      <br>
+      <ion-input type="string" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <br>
+    <ion-label>รหัสผ่าน</ion-label>
+    <ion-item>
+      <br>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+  </div>
+  <div class="Login">
+
+    <ion-button expand="block" color="tertiary" (click)="login()">
+      เข้าสู่ระบบ
+    </ion-button>
+
+    <!--        <ion-item *ngFor=" let obj of email && password">-->
+    <!--            {{obj.status}} <br> {{obj.data}}-->
+    <!--        </ion-item>-->
+
+    <br>
+    <ion-button expand="block">
+      Facebook
+    </ion-button>
+
+  </div>
+</ion-content>
