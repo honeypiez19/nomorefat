@@ -18,12 +18,14 @@ export class LoginPage implements OnInit {
 
     login() {
 
-        const postdata = {email: 'Ton', password: 'ton'};
+        const postdata = {email: this.email, password: this.password};
         this.http.setDataSerializer('json');
+
+        console.log('===>>' + JSON.stringify(postdata));
         this.http.post('http://nofat.msuproject.net/api/login', postdata, {}).then(value => {
 
-            console.log(value.data);
-
+            console.log('xxxxxx ' + value.data);
+            this.router.navigateByUrl('menu');
             // if (this.data.length === 1) {
             //     this.router.navigateByUrl('menu');
             // } else {
