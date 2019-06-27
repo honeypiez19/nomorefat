@@ -11,12 +11,13 @@ import {Router} from '@angular/router';
 
 export class RegisterPage implements OnInit {
 
-    name = '';
+    username = '';
     email = '';
     password = '';
     date = '';
     gender = '';
     weight = '';
+    height = '';
 
     constructor(private http: HTTP, private  router: Router) {
     }
@@ -26,16 +27,32 @@ export class RegisterPage implements OnInit {
 
     register() {
 
-        const {name, email, password, gender, date, weight} = this;
+        // const {name, email, password, gender, date, weight} = this;
 
-        if (name !== '' && email !== '' && password !== '' && date !== '' && weight !== '') {
-            if (gender === 'F' || gender === 'M') {
-                alert('สมัครสมาชิกเรียบร้อย !');
-                this.router.navigateByUrl('menu');
+        const postdata = {
+            name: this.username, email: this.email, password: this.password
+            , date: this.date, gender: this.gender, weight: this.weight, height: this.height
+        };
+        this.http.setDataSerializer('json');
+
+        console.log('===>>' + JSON.stringify(postdata));
+        this.http.post('http://nofat.msuproject.net/api/register', postdata, {}).then(value => {
+
+            console.log('xxxxxx ' + value.data);
+
+            if (this.username !== '' && this.email !== '' && this.password !== '' && this.date !== '' && this.weight !== '') {
+                if (this.gender === 'F' || this.gender === 'M') {
+                    alert('สมัครสมาชิกเรียบร้อย !');
+                    this.router.navigateByUrl('menu');
+                }
+            } else {
+                alert('กรุณาตรวจสอบความถูกต้อง !');
             }
-        } else {
-            alert('กรุณาตรวจสอบความถูกต้อง !');
-        }
+
+        }).catch(reason => {
+            console.log(reason);
+        });
+
 
     }
 }

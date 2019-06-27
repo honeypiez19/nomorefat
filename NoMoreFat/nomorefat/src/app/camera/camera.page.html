@@ -1,12 +1,28 @@
+<style>
+    .iconBack {
+        position: fixed;
+        top: 5px;
+        left: -50px;
+        bottom: 0;
+        width: 50%;
+    }
+</style>
+
 <ion-header>
     <ion-toolbar>
-        <ion-title>camera</ion-title>
+
+        <div class="iconBack">
+            <ion-back-button defaultHref="menu"></ion-back-button>
+        </div>
+
+        <ion-title style="text-align: center;">camera</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <br><ion-button expand="full" (click)="takePhoto()">Camera</ion-button>
+    <br>
+    <ion-button expand="full" (click)="takePhoto()">Camera</ion-button>
     <ion-button expand="full" (click)="openGallery()">Gallery</ion-button>
 
     <ion-img src="{{image}}"></ion-img>
