@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-menu',
@@ -8,27 +9,9 @@ import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
 })
 export class MenuPage implements OnInit {
 
-    image;
-
-    constructor(private camera: Camera) {
+    constructor() {
     }
 
     ngOnInit() {
-    }
-
-    takePhoto() {
-        const options: CameraOptions = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE,
-            // sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
-        };
-        this.camera.getPicture(options).then(value => {
-            this.image = 'data:image/jpeg;base64,' + value;
-            // console.log(value);
-        }).catch(reason => {
-
-        });
     }
 }

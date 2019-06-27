@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-advanced-http/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/tests/ios/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-device/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-device/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-file/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-file/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-ionic-keyboard/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-ionic-webview/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/tests/ios/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-statusbar/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-statusbar/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="C:\NoMoreFat\nomorefat" commandHistoryFileName="history-9" />
+      <TerminalTabState tabName="Local (2)" currentWorkingDirectory="C:\NoMoreFat\nomorefat\" commandHistoryFileName="history-32" />
+    </option>
+    <option name="mySelectedTabIndex" value="1" />
+  </component>
+  <component name="VcsLogIndexCollector">
+    <option name="indexTime" value="1954" />
+  </component>
+</project>
