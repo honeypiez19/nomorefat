@@ -1,8 +1,8 @@
 <style>
     .iconBack {
         position: fixed;
-        top: 10px;
-        left: 10px;
+        top: 5px;
+        left: -50px;
         bottom: 0;
         width: 50%;
     }
@@ -28,42 +28,42 @@
 
         <ion-card-header>ชื่อผู้ใช้</ion-card-header>
         <ion-item>
-            <ion-input type="string" [(ngModel)]="username"></ion-input>
+            <ion-input type="string" [(ngModel)]="Rusername"></ion-input>
         </ion-item>
 
         <ion-card-header>อีเมล</ion-card-header>
         <ion-item>
-            <ion-input type="string" [(ngModel)]="email"></ion-input>
+            <ion-input type="string" [(ngModel)]="Remail"></ion-input>
         </ion-item>
 
         <ion-card-header>รหัสผ่าน</ion-card-header>
         <ion-item>
-            <ion-input type="password" [(ngModel)]="password"></ion-input>
+            <ion-input type="password" [(ngModel)]="Rpassword"></ion-input>
         </ion-item>
     </ion-card>
 
     <ion-card>
         <ion-item>
             <ion-label>วันเดือนปี</ion-label>
-            <ion-datetime displayFormat="DD/MM/YY" [(ngModel)]="date"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YY" [(ngModel)]="Rdate"></ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>เพศ</ion-label>
             <ion-select>
-                <ion-select-option value="F" [(ngModel)]="gender">ผู้หญิง</ion-select-option>
-                <ion-select-option value="M" [(ngModel)]="gender">ผู้ชาย</ion-select-option>
+                <ion-select-option value="F" [(ngModel)]="Rgender">ผู้หญิง</ion-select-option>
+                <ion-select-option value="M" [(ngModel)]="Rgender">ผู้ชาย</ion-select-option>
             </ion-select>
         </ion-item>
 
         <ion-item>
             <ion-label>น้ำหนัก</ion-label>
-            <ion-input style="text-align: right;" type="string" [(ngModel)]="weight"></ion-input>
+            <ion-input style="text-align: right;" type="string" [(ngModel)]="Rweight"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label>ส่วนสูง</ion-label>
-            <ion-input style="text-align: right;" type="string" [(ngModel)]="height"></ion-input>
+            <ion-input style="text-align: right;" type="string" [(ngModel)]="Rheight"></ion-input>
         </ion-item>
     </ion-card>
 
@@ -71,50 +71,50 @@
         <ion-title style="text-align: center;">เป้าหมาย</ion-title>
         <ion-item>
             <ion-label>ลดน้ำหนัก</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="RloseWeight"></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>เพิ่มน้ำหนัก</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="RgainWeight"></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>น้ำหนักคงที่</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="RfixedWeight"></ion-checkbox>
         </ion-item>
     </ion-card>
 
     <ion-card>
-        <ion-title style="text-align: center;">น้ำหนักทีี่ต้องการเพิ่ม/ลด</ion-title>
-        <ion-input style="text-align: center;" type="string"></ion-input>
+        <ion-title style="text-align: center;">น้ำหนักที่ต้องการเพิ่ม/ลด</ion-title>
+        <ion-input style="text-align: center;" type="string" [(ngModel)]="RdesiredWeight"></ion-input>
     </ion-card>
 
     <ion-card>
         <ion-title style="text-align: center;">การทำกิจกรรม</ion-title>
         <ion-item>
-            <ion-label>น่้อยมาก</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-label>น้อยมาก</ion-label>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="RveryLittle" ></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>น้อย</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="Rlittle"></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>ปานกลาง</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="Rmiddle"></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>หนัก</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="Rheavy"></ion-checkbox>
         </ion-item>
 
         <ion-item>
             <ion-label>หนักมาก</ion-label>
-            <ion-checkbox mode="ios" color="primary"></ion-checkbox>
+            <ion-checkbox mode="ios" color="primary" [(ngModel)]="RveryHeavy"></ion-checkbox>
         </ion-item>
     </ion-card>
 

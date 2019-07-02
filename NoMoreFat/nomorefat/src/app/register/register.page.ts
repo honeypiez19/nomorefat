@@ -11,13 +11,33 @@ import {Router} from '@angular/router';
 
 export class RegisterPage implements OnInit {
 
-    username = '';
-    email = '';
-    password = '';
-    date = '';
-    gender = '';
-    weight = '';
-    height = '';
+    Rusername; // ชื่อผู้ใช้
+    Remail; // อีเมล
+    Rpassword; // รหัสผ่าน
+    Rdate; // วันเดือนปี
+    Rgender; // เพศ
+    Rweight; // น้ำหนัก
+    Rheight; // ส่วนสูง
+
+    // ----- เป้าหมาย -----
+    RloseWeight; // ลดน้ำหนัก
+    RgainWeight; // เพิ่มน้ำหนัก
+    RfixedWeight; // น้ำหนักคงที่
+
+    RdesiredWeight; // น้ำหนักที่ต้องการเพิ่ม/ลด
+
+    // ----- กิจกรรม -----
+    RveryLittle; // น้อยมาก
+    Rlittle; // น้อย
+    Rmiddle; // ปานกลาง
+    Rheavy; // หนัก
+    RveryHeavy; // หนักมาก
+
+    // public form = [
+    //     { val: 'ลดน้ำหนัก', isChecked: true },
+    //     { val: 'เพิ่มน้ำหนัก', isChecked: false },
+    //     { val: 'น้ำหนักคงที่', isChecked: false }
+    // ];
 
     constructor(private http: HTTP, private  router: Router) {
     }
@@ -30,8 +50,10 @@ export class RegisterPage implements OnInit {
         // const {name, email, password, gender, date, weight} = this;
 
         const postdata = {
-            name: this.username, email: this.email, password: this.password
-            , date: this.date, gender: this.gender, weight: this.weight, height: this.height
+            Rusername: this.Rusername, Remail: this.Remail, Rpassword: this.Rpassword
+            , Rdate: this.Rdate, Rgender: this.Rgender, Rweight: this.Rweight, Rheight: this.Rheight
+            , RfixedWeight: this.RfixedWeight, RdesiredWeight: this.RdesiredWeight, RveryLittle: this.RveryLittle
+            , Rlittle: this.Rlittle, Rmiddle: this.Rmiddle, Rheavy: this.Rheavy, RveryHeavy: this.RveryHeavy
         };
         this.http.setDataSerializer('json');
 
@@ -40,8 +62,8 @@ export class RegisterPage implements OnInit {
 
             console.log('xxxxxx ' + value.data);
 
-            if (this.username !== '' && this.email !== '' && this.password !== '' && this.date !== '' && this.weight !== '') {
-                if (this.gender === 'F' || this.gender === 'M') {
+            if (this.Rusername !== '' && this.Remail !== '' && this.Rpassword !== '' && this.Rdate !== '' && this.Rweight !== '') {
+                if (this.Rgender === 'F' || this.Rgender === 'M') {
                     alert('สมัครสมาชิกเรียบร้อย !');
                     this.router.navigateByUrl('menu');
                 }

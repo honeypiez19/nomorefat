@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-
 import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
-
 import {Router} from '@angular/router';
-
 import {HTTP} from '@ionic-native/http/ngx';
 
 @Component({
@@ -14,11 +11,15 @@ import {HTTP} from '@ionic-native/http/ngx';
 export class CameraPage implements OnInit {
 
     image;
+    imgData = {imageB64: ''}
+    public getImage: any;
+    public base64Image: string;
 
     constructor(private camera: Camera, private router: Router, private http: HTTP) {
     }
 
     ngOnInit() {
+        this.image = [];
     }
 
     takePhoto() {
@@ -56,6 +57,8 @@ export class CameraPage implements OnInit {
     }
 
     uploadImage() {
+
+
         const postdata = {image: this.image};
 
         // this.http.setDataSerializer('json');

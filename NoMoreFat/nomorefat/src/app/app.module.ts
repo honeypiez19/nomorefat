@@ -12,7 +12,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {HTTP} from '@ionic-native/http/ngx';
 import {Camera} from '@ionic-native/camera/ngx';
+import {FilePath} from '@ionic-native/file-path/ngx';
+import {FileChooser} from '@ionic-native/file-chooser/ngx';
+import {Base64} from '@ionic-native/base64/ngx';
+import {Facebook} from '@ionic-native/facebook/ngx';
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -20,9 +26,13 @@ import {Camera} from '@ionic-native/camera/ngx';
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         HTTP,
-        Camera
+        Camera,
+        FilePath,
+        FileChooser,
+        Base64,
+        Facebook
     ],
     bootstrap: [AppComponent]
 })

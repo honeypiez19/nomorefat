@@ -66,9 +66,10 @@
     <!--        </ion-item>-->
 
     <br>
-    <ion-button expand="block">
-      Facebook
+    <ion-button expand="block" (click)="loginFacebook()">
+      เข้าสู่ระบบผ่าน Facebook
     </ion-button>
+    <img [src]="user.img" alt="">
 
   </div>
 </ion-content>

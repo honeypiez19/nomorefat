@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'register-facebook', loadChildren: './register-facebook/register-facebook.module#RegisterFacebookPageModule' },
-  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' }
+  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' },
+  { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
+  { path: 'search', loadChildren: './search/search.module#SearchPageModule' }
 ];
 
 @NgModule({
