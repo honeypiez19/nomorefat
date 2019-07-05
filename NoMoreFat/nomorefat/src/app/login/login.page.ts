@@ -14,8 +14,9 @@ export class LoginPage implements OnInit {
 
     email;
     password;
+    name;
 
-    user: any = {};
+    // user: any = {};
 
     constructor(private http: HTTP,
                 private  router: Router,
@@ -28,7 +29,6 @@ export class LoginPage implements OnInit {
         // ส่งค่าที่ login ไป
 
 
-
         const postdata = {email: this.email, password: this.password};
         this.http.setDataSerializer('json');
 
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
         this.http.post('http://nofat.msuproject.net/api/login', postdata, {}).then(value => {
 
             console.log('xxxxxx ' + value.data);
-            this.datapass.myData = {email: this.email}
+            this.datapass.myData = {email: this.email};
             this.router.navigateByUrl('menu');
             // if (this.data.length === 1) {
             //     this.router.navigateByUrl('menu');
@@ -49,16 +49,46 @@ export class LoginPage implements OnInit {
     }
 
     loginFacebook() {
-        this.fb.login(['public_profile', 'email'])
+        // Login with permissions
+        this.fb.login(['public_profile', 'user_photos', 'email', 'user_birthday'])
             .then((res: FacebookLoginResponse) => {
+
+                // The connection was successful
                 if (res.status === 'connected') {
-                    this.user.img = 'http://graph.facebook.com/' + res.authResponse.userID + '/picture?type=square';
+
+                    // Get user ID and Token
+                    let fb_id = res.authResponse.userID;
+                    let fb_token = res.authResponse.accessToken;
+
+                    // Get user infos from the API
+                    this.fb.api('/me?fields=name,gender,birthday,email', []).then((user) => {
+
+                        // Get the connected user details
+                        // let gender = user.gender;
+                        // let birthday = user.birthday;
+                        const name = user.name;
+                        const email = user.email;
+
+                        console.log('=== USER INFOS ===');
+                        // console.log('Gender : ' + gender);
+                        // console.log('Birthday : ' + birthday);
+                        console.log('Name : ' + name);
+                        console.log('Email : ' + email);
+
+                        // => Open user session and redirect to the next page
+
+                    });
+
                 } else {
-                    alert('Login Failed');
+
+                    console.log('An error occurred...');
+
                 }
-                console.log('Logged into Facebook!', res);
+
             })
-            .catch(e => console.log('Error logging into Facebook', e));
+            .catch((e) => {
+                console.log('Error logging into Facebook', e);
+            });
     }
 
 //     getData(access_token:string){
