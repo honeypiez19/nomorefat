@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 
 export class RegisterPage implements OnInit {
 
+    // ----- ข้อมูลผู้ใช้ -----
     Rusername; // ชื่อผู้ใช้
     Remail; // อีเมล
     Rpassword; // รหัสผ่าน
@@ -18,7 +19,6 @@ export class RegisterPage implements OnInit {
     Rgender; // เพศ
     Rweight; // น้ำหนัก
     Rheight; // ส่วนสูง
-
     // ----- เป้าหมาย -----
     RloseWeight; // ลดน้ำหนัก
     RgainWeight; // เพิ่มน้ำหนัก

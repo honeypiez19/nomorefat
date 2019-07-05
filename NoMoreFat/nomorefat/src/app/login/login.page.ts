@@ -26,9 +26,6 @@ export class LoginPage implements OnInit {
 
     login() {
 
-        // ส่งค่าที่ login ไป
-
-
         const postdata = {email: this.email, password: this.password};
         this.http.setDataSerializer('json');
 
@@ -61,7 +58,7 @@ export class LoginPage implements OnInit {
                     let fb_token = res.authResponse.accessToken;
 
                     // Get user infos from the API
-                    this.fb.api('/me?fields=name,gender,birthday,email', []).then((user) => {
+                    this.fb.api('/me?fields=name,gender,birthday,email,id',  []).then((user) => {
 
                         // Get the connected user details
                         // let gender = user.gender;
@@ -74,6 +71,7 @@ export class LoginPage implements OnInit {
                         // console.log('Birthday : ' + birthday);
                         console.log('Name : ' + name);
                         console.log('Email : ' + email);
+                        console.log('ID: ' + user.id);
 
                         // => Open user session and redirect to the next page
 
