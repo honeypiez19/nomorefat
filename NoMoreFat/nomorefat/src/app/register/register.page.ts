@@ -14,7 +14,7 @@ export class RegisterPage implements OnInit {
     Rusername; // ชื่อผู้ใช้
     Remail; // อีเมล
     Rpassword; // รหัสผ่าน
-    Rdate; // วันเดือนปี
+    Rdate = new Date(); // วันเดือนปี
     Rgender; // เพศ
     Rweight; // น้ำหนัก
     Rheight; // ส่วนสูง
@@ -62,14 +62,14 @@ export class RegisterPage implements OnInit {
 
             console.log('xxxxxx ' + value.data);
 
-            if (this.Rusername !== '' && this.Remail !== '' && this.Rpassword !== '' && this.Rdate !== '' && this.Rweight !== '') {
-                if (this.Rgender === 'F' || this.Rgender === 'M') {
-                    alert('สมัครสมาชิกเรียบร้อย !');
-                    this.router.navigateByUrl('menu');
-                }
-            } else {
-                alert('กรุณาตรวจสอบความถูกต้อง !');
-            }
+            // if (this.Rusername !== '' && this.Remail !== '' && this.Rpassword !== '' && this.Rdate !== '' && this.Rweight !== '') {
+            //     if (this.Rgender === 'F' || this.Rgender === 'M') {
+            //         alert('สมัครสมาชิกเรียบร้อย !');
+            //         this.router.navigateByUrl('menu');
+            //     }
+            // } else {
+            //     alert('กรุณาตรวจสอบความถูกต้อง !');
+            // }
 
         }).catch(reason => {
             console.log(reason);

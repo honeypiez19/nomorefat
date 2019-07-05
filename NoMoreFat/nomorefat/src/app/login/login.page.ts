@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {HTTP} from '@ionic-native/http/ngx';
 import {Router} from '@angular/router';
 import {Facebook, FacebookLoginResponse} from '@ionic-native/facebook/ngx';
+import {DatapassService} from '../datapass.service';
 
 @Component({
     selector: 'app-login',
@@ -13,12 +14,20 @@ export class LoginPage implements OnInit {
 
     email;
     password;
+
     user: any = {};
 
-    constructor(private http: HTTP, private  router: Router, private fb: Facebook) {
+    constructor(private http: HTTP,
+                private  router: Router,
+                private fb: Facebook,
+                private datapass: DatapassService) {
     }
 
     login() {
+
+        // ส่งค่าที่ login ไป
+
+
 
         const postdata = {email: this.email, password: this.password};
         this.http.setDataSerializer('json');
@@ -27,6 +36,7 @@ export class LoginPage implements OnInit {
         this.http.post('http://nofat.msuproject.net/api/login', postdata, {}).then(value => {
 
             console.log('xxxxxx ' + value.data);
+            this.datapass.myData = {email: this.email}
             this.router.navigateByUrl('menu');
             // if (this.data.length === 1) {
             //     this.router.navigateByUrl('menu');
@@ -50,6 +60,7 @@ export class LoginPage implements OnInit {
             })
             .catch(e => console.log('Error logging into Facebook', e));
     }
+
 //     getData(access_token:string){
 // let url =
 //     }

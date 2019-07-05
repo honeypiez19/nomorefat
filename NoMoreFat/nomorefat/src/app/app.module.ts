@@ -16,6 +16,8 @@ import {FilePath} from '@ionic-native/file-path/ngx';
 import {FileChooser} from '@ionic-native/file-chooser/ngx';
 import {Base64} from '@ionic-native/base64/ngx';
 import {Facebook} from '@ionic-native/facebook/ngx';
+import { Calendar } from '@ionic-native/calendar/ngx';
+import {DatapassService} from './datapass.service';
 
 // @ts-ignore
 // @ts-ignore
@@ -27,12 +29,14 @@ import {Facebook} from '@ionic-native/facebook/ngx';
         StatusBar,
         SplashScreen,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        DatapassService,
         HTTP,
         Camera,
         FilePath,
         FileChooser,
         Base64,
-        Facebook
+        Facebook,
+        Calendar
     ],
     bootstrap: [AppComponent]
 })
