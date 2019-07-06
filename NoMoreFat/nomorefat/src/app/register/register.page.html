@@ -43,15 +43,15 @@
 
         <ion-card-header>FacebookID</ion-card-header>
         <ion-item>
-            <ion-text type="string"></ion-text>
+            <ion-text color="dark" [(ngModel)]="RfacebookID">{{RfacebookID}}</ion-text>
         </ion-item>
 
-    </ion-card>
 
-    <ion-card>
         <ion-item>
             <ion-label>วันเดือนปี</ion-label>
-            <ion-datetime displayFormat="DD/MM/YY" [(ngModel)]="Rdate"></ion-datetime>
+            <ion-datetime value="{{Rdate | date: 'DD/MM/YY'}}"
+                          displayFormat="DD/MM/YY"
+                          [ngModel]="Rdate.toString()"></ion-datetime>
         </ion-item>
 
         <ion-item>

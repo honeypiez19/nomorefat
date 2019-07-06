@@ -14,6 +14,7 @@ export class SettingPage implements OnInit {
     }
 
     ngOnInit() {
+
         // เอาข้อมูลจาก Service ไปใส่ใน myValue
         this.myValue = this.datapass.myData;
         console.log(this.myValue);

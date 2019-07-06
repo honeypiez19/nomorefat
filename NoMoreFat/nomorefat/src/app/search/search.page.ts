@@ -8,7 +8,8 @@ import {HTTP} from '@ionic-native/http/ngx';
 })
 export class SearchPage implements OnInit {
 
-    name: any[] = [];
+    name;
+    listName;
 
     constructor(private http: HTTP) {
     }
@@ -17,12 +18,15 @@ export class SearchPage implements OnInit {
 
     }
 
-    search(event) {
+    searchMenu() {
 
-        this.http.post('http://nofat.msuproject.net/api/search', {}, {}).then(value => {
+        const postdata = {name: this.name};
+        this.http.setDataSerializer('json');
 
-            console.log(value);
-            // this.name = value;
+        this.http.post('http://nofat.msuproject.net/api/search', postdata, {}).then(value => {
+
+            console.log('zzzzz' + value.data);
+
         }).catch(reason => {
 
         });

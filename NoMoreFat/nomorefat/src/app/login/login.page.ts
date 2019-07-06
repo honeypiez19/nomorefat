@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
     email;
     password;
     name;
+    facebookID;
 
     // user: any = {};
 
@@ -33,7 +34,10 @@ export class LoginPage implements OnInit {
         this.http.post('http://nofat.msuproject.net/api/login', postdata, {}).then(value => {
 
             console.log('xxxxxx ' + value.data);
+
+            // ส่ง email ไป setting
             this.datapass.myData = {email: this.email};
+
             this.router.navigateByUrl('menu');
             // if (this.data.length === 1) {
             //     this.router.navigateByUrl('menu');
@@ -58,7 +62,10 @@ export class LoginPage implements OnInit {
                     let fb_token = res.authResponse.accessToken;
 
                     // Get user infos from the API
-                    this.fb.api('/me?fields=name,gender,birthday,email,id',  []).then((user) => {
+                    this.fb.api('/me?fields=name,gender,birthday,email,id', []).then((user) => {
+
+                        this.datapass.myData = {facebookID: user.id};
+                        this.router.navigateByUrl('register');
 
                         // Get the connected user details
                         // let gender = user.gender;

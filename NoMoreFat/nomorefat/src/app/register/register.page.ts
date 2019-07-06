@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 import {HTTP} from '@ionic-native/http/ngx';
 import {Router} from '@angular/router';
+import {DatapassService} from '../datapass.service';
+
 
 @Component({
     selector: 'app-register',
@@ -19,6 +21,7 @@ export class RegisterPage implements OnInit {
     Rgender; // เพศ
     Rweight; // น้ำหนัก
     Rheight; // ส่วนสูง
+
     // ----- เป้าหมาย -----
     RloseWeight; // ลดน้ำหนัก
     RgainWeight; // เพิ่มน้ำหนัก
@@ -33,16 +36,23 @@ export class RegisterPage implements OnInit {
     Rheavy; // หนัก
     RveryHeavy; // หนักมาก
 
+    RfacebookID;
+
+    // ส่ง user.id จากหน้า login ของ FB มาหน้า Regis
+    // user: any;
+
     // public form = [
     //     { val: 'ลดน้ำหนัก', isChecked: true },
     //     { val: 'เพิ่มน้ำหนัก', isChecked: false },
     //     { val: 'น้ำหนักคงที่', isChecked: false }
     // ];
 
-    constructor(private http: HTTP, private  router: Router) {
+    constructor(private http: HTTP, private  router: Router, private datapass: DatapassService) {
     }
 
     ngOnInit() {
+        this.RfacebookID = this.datapass.myData;
+        console.log(this.RfacebookID);
     }
 
     register() {
@@ -60,16 +70,17 @@ export class RegisterPage implements OnInit {
         console.log('===>>' + JSON.stringify(postdata));
         this.http.post('http://nofat.msuproject.net/api/register', postdata, {}).then(value => {
 
+
             console.log('xxxxxx ' + value.data);
 
-            // if (this.Rusername !== '' && this.Remail !== '' && this.Rpassword !== '' && this.Rdate !== '' && this.Rweight !== '') {
-            //     if (this.Rgender === 'F' || this.Rgender === 'M') {
-            //         alert('สมัครสมาชิกเรียบร้อย !');
-            //         this.router.navigateByUrl('menu');
-            //     }
-            // } else {
-            //     alert('กรุณาตรวจสอบความถูกต้อง !');
-            // }
+            if (this.Rusername !== null && this.Remail !== '' && this.Rpassword !== '' && this.Rweight !== '') {
+                if (this.Rgender === 'F' || this.Rgender === 'M') {
+                    alert('สมัครสมาชิกเรียบร้อย !');
+                    this.router.navigateByUrl('menu');
+                }
+            } else {
+                alert('กรุณาตรวจสอบความถูกต้อง !');
+            }
 
         }).catch(reason => {
             console.log(reason);

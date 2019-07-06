@@ -8,7 +8,6 @@
     }
 </style>
 
-
 <ion-header>
     <ion-toolbar>
 
@@ -19,13 +18,19 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-searchbar animated (ionChange)="search($event)"></ion-searchbar>
-
 <ion-content>
-    <ion-list>
-        <ion-item *ngFor="let name of name">
-            {{name}}
+    <ion-item>
+        <ion-label position="floating">SearchMenu</ion-label>
+        <ion-input>
 
-        </ion-item>
-    </ion-list>
+        </ion-input>
+    </ion-item>
+    <ion-button (click)="searchMenu()">Search</ion-button>
+
+    <ion-card *ngFor="let name of listName">
+
+        <ion-card-title>{{name.mmenu}}</ion-card-title>
+        <ion-card-content>{{name.mcal}}</ion-card-content>
+
+    </ion-card>
 </ion-content>
