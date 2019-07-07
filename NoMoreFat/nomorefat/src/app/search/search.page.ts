@@ -23,9 +23,13 @@ export class SearchPage implements OnInit {
         const postdata = {name: this.name};
         this.http.setDataSerializer('json');
 
+        console.log('===>>' + JSON.stringify(postdata));
         this.http.post('http://nofat.msuproject.net/api/search', postdata, {}).then(value => {
 
-            console.log('zzzzz' + value.data);
+            let jsonData = JSON.parse(value.data);
+            console.log(jsonData);
+            this.listName = jsonData.data;
+            console.log('zzzzz' + this.listName);
 
         }).catch(reason => {
 
