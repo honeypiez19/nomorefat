@@ -14,14 +14,19 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/plugins/com-badrit-base64/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-advanced-http/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-calendar/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/tests/ios/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-camera/tests/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-device/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-device/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-facebook4/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-file/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-file/tests/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-filechooser/package.json" />
+      <path value="$PROJECT_DIR$/plugins/cordova-plugin-filepath/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-ionic-keyboard/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-ionic-webview/package.json" />
       <path value="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/package.json" />
@@ -40,6 +45,6 @@
     <option name="mySelectedTabIndex" value="1" />
   </component>
   <component name="VcsLogIndexCollector">
-    <option name="indexTime" value="2685" />
+    <option name="indexTime" value="28657" />
   </component>
 </project>
