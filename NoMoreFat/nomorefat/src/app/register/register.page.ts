@@ -53,6 +53,7 @@ export class RegisterPage implements OnInit {
     ngOnInit() {
         this.RfacebookID = this.datapass.myData;
         console.log(this.RfacebookID);
+        console.log('===>>' + JSON.stringify(this.RfacebookID));
     }
 
     register() {
