@@ -1,11 +1,20 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class DatapassService {
 
-  public myData;
+    username: any;
+    email: any;
+    password: any;
+    facebookID: any;
 
-  constructor() { }
+    public myData;
+
+
+
+    constructor() {
+
+    }
 }

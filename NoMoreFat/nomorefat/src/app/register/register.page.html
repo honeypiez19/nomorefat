@@ -91,11 +91,6 @@
     </ion-card>
 
     <ion-card>
-        <ion-title style="text-align: center;">น้ำหนักที่ต้องการเพิ่ม/ลด</ion-title>
-        <ion-input style="text-align: center;" type="string" [(ngModel)]="RdesiredWeight"></ion-input>
-    </ion-card>
-
-    <ion-card>
         <ion-title style="text-align: center;">การทำกิจกรรม</ion-title>
         <ion-item>
             <ion-label>น้อยมาก</ion-label>
@@ -123,9 +118,19 @@
         </ion-item>
     </ion-card>
 
+    <ion-card>
+        <ion-title style="text-align: center;">น้ำหนักที่ต้องการเพิ่ม/ลด</ion-title>
+        <ion-input style="text-align: center;" type="string" [(ngModel)]="RdesiredWeight"></ion-input>
+    </ion-card>
+
+    <ion-card>
+        <ion-title style="text-align: center;">น้ำหนักที่จะลดลงในแต่ละสัปดาห์</ion-title>
+        <ion-input style="text-align: center;" type="string" [(ngModel)]="RdesiredWeight"></ion-input>
+    </ion-card>
+
     <div class="buttonSave">
         <ion-button color="success" (click)="register()">
-            บันทึก
+            สมัครสมาชิก
         </ion-button>
     </div>
 

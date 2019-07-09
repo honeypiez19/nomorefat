@@ -8,18 +8,23 @@ import {DatapassService} from '../datapass.service';
 })
 export class SettingPage implements OnInit {
 
-    myValue;
+    Semail;
+    Spassword;
+    Sfacebook;
 
     constructor(private datapass: DatapassService) {
     }
 
     ngOnInit() {
+        // เอาข้อมูลจาก Service ไปใส่ใน Semail
+        this.Semail = this.datapass.myData;
+        // เอาข้อมูลจาก Service ไปใส่ใน Spassword
+        this.Spassword = this.datapass.myData;
 
-        // เอาข้อมูลจาก Service ไปใส่ใน myValue
-        this.myValue = this.datapass.myData;
-        console.log(this.myValue);
+        this.Sfacebook = this.datapass.myData;
+
+        console.log('datapass' + JSON.stringify(this.datapass));
     }
-
     setting() {
     }
 }

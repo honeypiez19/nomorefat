@@ -1,8 +1,18 @@
 <ion-content>
     <ion-card>
-        <ion-card-header style="text-align: center;">แคลอรี่ที่เหลือ</ion-card-header>
+        <ion-card-header style="text-align: center;">แคลอรี่วันนี้</ion-card-header>
+        <ion-card-content></ion-card-content>
     </ion-card>
 
+    <ion-card>
+        <ion-card-header style="text-align: center;">แคลอรี่ที่เหลือ</ion-card-header>
+        <ion-card-content></ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header style="text-align: center;">เมนูแนะนำ</ion-card-header>
+        <ion-card-content></ion-card-content>
+    </ion-card>
     <ion-tabs>
 
         <ion-tab-bar slot="bottom">
@@ -27,7 +37,7 @@
                 <ion-label>ตั้งค่า</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button tab="folder" [routerLink]="'/menu/history'">
+            <ion-tab-button tab="history" [routerLink]="'/menu/history'">
                 <ion-icon name="folder"></ion-icon>
                 <ion-label>ประวัติ</ion-label>
             </ion-tab-button>

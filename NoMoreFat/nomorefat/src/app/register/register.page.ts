@@ -18,34 +18,29 @@ export class RegisterPage implements OnInit {
     Remail; // อีเมล
     Rpassword; // รหัสผ่าน
     Rdate = new Date(); // วันเดือนปี
-    Rgender; // เพศ
-    Rweight; // น้ำหนัก
-    Rheight; // ส่วนสูง
+    Rgender = 'm'; // เพศ
+    Rweight = '58'; // น้ำหนัก
+    Rheight = '165'; // ส่วนสูง
 
     // ----- เป้าหมาย -----
     RloseWeight; // ลดน้ำหนัก
-    RgainWeight; // เพิ่มน้ำหนัก
+    RgainWeight = 'Gainweight'; // เพิ่มน้ำหนัก
     RfixedWeight; // น้ำหนักคงที่
 
-    RdesiredWeight; // น้ำหนักที่ต้องการเพิ่ม/ลด
-
     // ----- กิจกรรม -----
-    RveryLittle; // น้อยมาก
+    RveryLittle = '1.2'; // น้อยมาก
     Rlittle; // น้อย
     Rmiddle; // ปานกลาง
     Rheavy; // หนัก
     RveryHeavy; // หนักมาก
 
+    RdesiredWeight = '5'; // น้ำหนักที่ต้องการเพิ่ม/ลด
+    RWeightThatWillBeReducedEachWeek = '0.33'; // น้ำหนักที่จะลดลงในแต่ละสัปดาห์
+
     RfacebookID;
 
     // ส่ง user.id จากหน้า login ของ FB มาหน้า Regis
-    // user: any;
-
-    // public form = [
-    //     { val: 'ลดน้ำหนัก', isChecked: true },
-    //     { val: 'เพิ่มน้ำหนัก', isChecked: false },
-    //     { val: 'น้ำหนักคงที่', isChecked: false }
-    // ];
+    /// ตัวแปรซ้ายใน Service ขวาของแอป
 
     constructor(private http: HTTP, private  router: Router, private datapass: DatapassService) {
     }
@@ -61,21 +56,53 @@ export class RegisterPage implements OnInit {
         // const {name, email, password, gender, date, weight} = this;
 
         const postdata = {
-            Rusername: this.Rusername, Remail: this.Remail, Rpassword: this.Rpassword
-            , Rdate: this.Rdate, Rgender: this.Rgender, Rweight: this.Rweight, Rheight: this.Rheight
-            , RfixedWeight: this.RfixedWeight, RdesiredWeight: this.RdesiredWeight, RveryLittle: this.RveryLittle
-            , Rlittle: this.Rlittle, Rmiddle: this.Rmiddle, Rheavy: this.Rheavy, RveryHeavy: this.RveryHeavy
+            username: this.Rusername, email: this.Remail, password: this.Rpassword
+            , date: this.Rdate, gender: this.Rgender
+            , weight: this.Rweight, hight: this.Rheight
+
+            // เป้าหมาย
+            , distination: this.RgainWeight
+
+            // กิจกรรม
+            , activities: this.RveryLittle
+
+            // น้ำหนักที่ต้องการเพิ่ม/ลด
+            , desiredweight: this.RdesiredWeight
+
+            // น้ำหนักที่จะลดลงในแต่ละสัปดาห์
+            , WeightThatWillBeReducedEachWeek: this.RWeightThatWillBeReducedEachWeek
+
+            // this.Rlittle
+            // this.Rmiddle
+            // this.Rheavy
+            // this.RveryHeavy
+
         };
         this.http.setDataSerializer('json');
 
         console.log('===>>' + JSON.stringify(postdata));
         this.http.post('http://nofat.msuproject.net/api/register', postdata, {}).then(value => {
 
+            console.log('xxxxxx' + this.Rweight);
+            console.log('xxxxxx' + this.Rheight);
+            console.log('xxxxxx' + this.RveryLittle);
+            console.log('xxxxxx' + this.RgainWeight);
+            console.log('xxxxx' + this.RdesiredWeight);
+            console.log('xxxxx' + this.RWeightThatWillBeReducedEachWeek);
 
             console.log('xxxxxx ' + value.data);
 
-            if (this.Rusername !== null && this.Remail !== '' && this.Rpassword !== '' && this.Rweight !== '') {
-                if (this.Rgender === 'F' || this.Rgender === 'M') {
+            // ส่งค่า
+            this.datapass.username = this.Rusername;
+            this.datapass.email = this.Remail;
+            this.datapass.password = this.Rpassword;
+
+
+
+            if (this.Rusername !== null && this.Remail !== null && this.Rpassword !== null
+                && this.Rweight !== null && this.Rheight !== null) {
+                if (this.Rgender === 'f' || this.Rgender === 'm' && this.RveryLittle === '1.2' && this.RgainWeight === this.RgainWeight
+                    && this.RWeightThatWillBeReducedEachWeek === '0.33' && this.RdesiredWeight === '5') {
                     alert('สมัครสมาชิกเรียบร้อย !');
                     this.router.navigateByUrl('menu');
                 }

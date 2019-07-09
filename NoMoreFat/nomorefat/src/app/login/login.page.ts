@@ -15,6 +15,8 @@ export class LoginPage implements OnInit {
     email;
     password;
     name;
+
+    // ตัวแปรที่จะส่งค่าไป
     facebookID;
 
     // user: any = {};
@@ -36,7 +38,10 @@ export class LoginPage implements OnInit {
             console.log('xxxxxx ' + value.data);
 
             // ส่ง email ไป setting
-            this.datapass.myData = {email: this.email};
+            this.datapass.email = this.email;
+            // ส่ง password ไป setting
+            this.datapass.password = this.password;
+
 
             this.router.navigateByUrl('menu');
             // if (this.data.length === 1) {
@@ -64,7 +69,9 @@ export class LoginPage implements OnInit {
                     // Get user infos from the API
                     this.fb.api('/me?fields=name,gender,birthday,email,id', []).then((user) => {
 
-                        this.datapass.myData = {facebookID: user.id};
+                        // ส่งค่า facebookID ไป setting
+                        this.datapass.facebookID = {facebookID: user.id};
+
                         this.router.navigateByUrl('register');
 
                         // Get the connected user details
@@ -100,7 +107,8 @@ export class LoginPage implements OnInit {
 // let url =
 //     }
 
-    ngOnInit(): void {
+    ngOnInit() {
+
     }
 
 
